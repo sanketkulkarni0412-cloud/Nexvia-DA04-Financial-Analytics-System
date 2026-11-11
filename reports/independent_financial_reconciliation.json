@@ -1,0 +1,250 @@
+{
+  "total_rows_parsed": 2260701,
+  "null_loan_amnt_count": 33,
+  "null_loan_amnt_details": [
+    {
+      "chunk": 4,
+      "global_row_idx": 421095,
+      "id": "Total amount funded in policy code 1: 6417608175",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 4,
+      "global_row_idx": 421096,
+      "id": "Total amount funded in policy code 2: 1944088810",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 5,
+      "global_row_idx": 528961,
+      "id": "Total amount funded in policy code 1: 1741781700",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 5,
+      "global_row_idx": 528962,
+      "id": "Total amount funded in policy code 2: 564202131",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 6,
+      "global_row_idx": 651664,
+      "id": "Total amount funded in policy code 1: 1791201400",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 6,
+      "global_row_idx": 651665,
+      "id": "Total amount funded in policy code 2: 651669342",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 7,
+      "global_row_idx": 749520,
+      "id": "Total amount funded in policy code 1: 1443412975",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 7,
+      "global_row_idx": 749521,
+      "id": "Total amount funded in policy code 2: 511988838",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 8,
+      "global_row_idx": 877716,
+      "id": "Total amount funded in policy code 1: 2063142975",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 8,
+      "global_row_idx": 877717,
+      "id": "Total amount funded in policy code 2: 823319310",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 9,
+      "global_row_idx": 983169,
+      "id": "Total amount funded in policy code 1: 1538432075",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 9,
+      "global_row_idx": 983170,
+      "id": "Total amount funded in policy code 2: 608903141",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 11,
+      "global_row_idx": 1117058,
+      "id": "Total amount funded in policy code 1: 2087217200",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 11,
+      "global_row_idx": 1117059,
+      "id": "Total amount funded in policy code 2: 662815446",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 13,
+      "global_row_idx": 1352689,
+      "id": "Total amount funded in policy code 1: 3503840175",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 13,
+      "global_row_idx": 1352690,
+      "id": "Total amount funded in policy code 2: 873652739",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 14,
+      "global_row_idx": 1481103,
+      "id": "Total amount funded in policy code 1: 2050909275",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 14,
+      "global_row_idx": 1481104,
+      "id": "Total amount funded in policy code 2: 820109297",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 16,
+      "global_row_idx": 1611877,
+      "id": "Total amount funded in policy code 1: 2080429200",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 16,
+      "global_row_idx": 1611878,
+      "id": "Total amount funded in policy code 2: 737901574",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 16,
+      "global_row_idx": 1651665,
+      "id": "Loans that do not meet the credit policy",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 16,
+      "global_row_idx": 1654415,
+      "id": "Total amount funded in policy code 1: 460296150",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 16,
+      "global_row_idx": 1654416,
+      "id": "Total amount funded in policy code 2: 0",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 17,
+      "global_row_idx": 1751196,
+      "id": "Total amount funded in policy code 1: 1437969475",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 17,
+      "global_row_idx": 1751197,
+      "id": "Total amount funded in policy code 2: 520780182",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 19,
+      "global_row_idx": 1939379,
+      "id": "Total amount funded in policy code 1: 2700702175",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 19,
+      "global_row_idx": 1939380,
+      "id": "Total amount funded in policy code 2: 81866225",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 20,
+      "global_row_idx": 2038501,
+      "id": "Total amount funded in policy code 1: 1404586950",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 20,
+      "global_row_idx": 2038502,
+      "id": "Total amount funded in policy code 2: 567447023",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 21,
+      "global_row_idx": 2157151,
+      "id": "Total amount funded in policy code 1: 1817354125",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 21,
+      "global_row_idx": 2157152,
+      "id": "Total amount funded in policy code 2: 620899600",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 22,
+      "global_row_idx": 2260699,
+      "id": "Total amount funded in policy code 1: 1465324575",
+      "loan_amnt": "nan",
+      "term": "nan"
+    },
+    {
+      "chunk": 22,
+      "global_row_idx": 2260700,
+      "id": "Total amount funded in policy code 2: 521953170",
+      "loan_amnt": "nan",
+      "term": "nan"
+    }
+  ],
+  "non_numeric_id_in_valid_loans": 0,
+  "non_numeric_id_details": [],
+  "valid_loans_count": 2260668,
+  "financial_totals": {
+    "sum_loan_amnt": 34016115925.0,
+    "sum_funded_amnt": 34004208600.0,
+    "sum_funded_amnt_inv": 33963004960.806164,
+    "sum_total_pymnt": 27314649582.62289,
+    "sum_total_rec_prncp": 21489393643.58,
+    "sum_total_rec_int": 5496560266.06,
+    "sum_total_rec_late_fee": 3432718.1922074067,
+    "sum_recoveries": 325262956.8628928
+  }
+}

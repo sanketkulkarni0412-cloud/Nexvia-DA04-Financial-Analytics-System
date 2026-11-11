@@ -1,0 +1,7 @@
+risk_tier,risk_band,score_range,total_count,portfolio_share_pct,bad_count,actual_bad_rate_pct,modeled_bad_rate_pct,bad_capture_pct,mean_score,cumulative_bad_capture_pct
+1,Very Low Risk,555 - +,30097,11.16,1817,6.04,6.45,3.37,565.3,3.37
+2,Low Risk,540 - 554,55155,20.46,6354,11.52,11.51,11.79,546.2,15.16
+3,Moderate Risk,530 - 539,50626,18.78,8396,16.58,16.27,15.59,534.5,30.75
+4,Elevated Risk,520 - 529,45842,17.0,9867,21.52,21.41,18.32,524.7,49.07
+5,High Risk,505 - 519,42618,15.81,12385,29.06,29.23,22.99,512.7,72.06
+6,Very High Risk,0 - 504,26065,9.67,11279,43.27,43.45,20.94,494.8,93.0

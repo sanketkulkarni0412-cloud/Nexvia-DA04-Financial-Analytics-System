@@ -1,0 +1,80 @@
+[
+  {
+    "tier": 1,
+    "risk_band": "Very Low Risk",
+    "score_range": "555 - +",
+    "total_count": 30097,
+    "pct_portfolio": 11.16,
+    "bad_count": 1817,
+    "actual_bad_rate": 6.04,
+    "pred_bad_rate": 6.45,
+    "bad_capture_pct": 3.37,
+    "mean_score": 565.3,
+    "cumulative_bad_capture_pct": 3.37
+  },
+  {
+    "tier": 2,
+    "risk_band": "Low Risk",
+    "score_range": "540 - 554",
+    "total_count": 55155,
+    "pct_portfolio": 20.46,
+    "bad_count": 6354,
+    "actual_bad_rate": 11.52,
+    "pred_bad_rate": 11.51,
+    "bad_capture_pct": 11.79,
+    "mean_score": 546.2,
+    "cumulative_bad_capture_pct": 15.16
+  },
+  {
+    "tier": 3,
+    "risk_band": "Moderate Risk",
+    "score_range": "530 - 539",
+    "total_count": 50626,
+    "pct_portfolio": 18.78,
+    "bad_count": 8396,
+    "actual_bad_rate": 16.58,
+    "pred_bad_rate": 16.27,
+    "bad_capture_pct": 15.59,
+    "mean_score": 534.5,
+    "cumulative_bad_capture_pct": 30.75
+  },
+  {
+    "tier": 4,
+    "risk_band": "Elevated Risk",
+    "score_range": "520 - 529",
+    "total_count": 45842,
+    "pct_portfolio": 17.0,
+    "bad_count": 9867,
+    "actual_bad_rate": 21.52,
+    "pred_bad_rate": 21.41,
+    "bad_capture_pct": 18.32,
+    "mean_score": 524.7,
+    "cumulative_bad_capture_pct": 49.07
+  },
+  {
+    "tier": 5,
+    "risk_band": "High Risk",
+    "score_range": "505 - 519",
+    "total_count": 42618,
+    "pct_portfolio": 15.81,
+    "bad_count": 12385,
+    "actual_bad_rate": 29.06,
+    "pred_bad_rate": 29.23,
+    "bad_capture_pct": 22.99,
+    "mean_score": 512.7,
+    "cumulative_bad_capture_pct": 72.06
+  },
+  {
+    "tier": 6,
+    "risk_band": "Very High Risk",
+    "score_range": "0 - 504",
+    "total_count": 26065,
+    "pct_portfolio": 9.67,
+    "bad_count": 11279,
+    "actual_bad_rate": 43.27,
+    "pred_bad_rate": 43.45,
+    "bad_capture_pct": 20.94,
+    "mean_score": 494.8,
+    "cumulative_bad_capture_pct": 93.0
+  }
+]

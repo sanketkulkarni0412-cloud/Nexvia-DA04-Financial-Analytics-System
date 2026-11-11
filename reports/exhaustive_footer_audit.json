@@ -1,0 +1,349 @@
+{
+  "total_csv_parsed_rows": 2260701,
+  "total_excluded_rows": 33,
+  "total_valid_loans": 2260668,
+  "reconciliation_formula": "2260701 parsed - 33 excluded = 2260668 valid",
+  "financial_recalculation": {
+    "sum_loan_amnt": 34016115925.0,
+    "sum_funded_amnt": 34004208600.0,
+    "sum_funded_amnt_inv": 33963004960.806164,
+    "sum_total_pymnt": 27314649582.62289,
+    "sum_total_rec_prncp": 21489393643.58,
+    "sum_total_rec_int": 5496560266.06,
+    "sum_total_rec_late_fee": 3432718.1922074067,
+    "sum_recoveries": 325262956.8628928,
+    "sum_collection_recovery_fee": 54216619.19608218
+  },
+  "all_33_excluded_records": [
+    {
+      "csv_line_number": 421097,
+      "chunk_number": 4,
+      "id_value": "Total amount funded in policy code 1: 6417608175",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 6417608175"
+      }
+    },
+    {
+      "csv_line_number": 421098,
+      "chunk_number": 4,
+      "id_value": "Total amount funded in policy code 2: 1944088810",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 1944088810"
+      }
+    },
+    {
+      "csv_line_number": 528963,
+      "chunk_number": 5,
+      "id_value": "Total amount funded in policy code 1: 1741781700",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 1741781700"
+      }
+    },
+    {
+      "csv_line_number": 528964,
+      "chunk_number": 5,
+      "id_value": "Total amount funded in policy code 2: 564202131",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 564202131"
+      }
+    },
+    {
+      "csv_line_number": 651666,
+      "chunk_number": 6,
+      "id_value": "Total amount funded in policy code 1: 1791201400",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 1791201400"
+      }
+    },
+    {
+      "csv_line_number": 651667,
+      "chunk_number": 6,
+      "id_value": "Total amount funded in policy code 2: 651669342",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 651669342"
+      }
+    },
+    {
+      "csv_line_number": 749522,
+      "chunk_number": 7,
+      "id_value": "Total amount funded in policy code 1: 1443412975",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 1443412975"
+      }
+    },
+    {
+      "csv_line_number": 749523,
+      "chunk_number": 7,
+      "id_value": "Total amount funded in policy code 2: 511988838",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 511988838"
+      }
+    },
+    {
+      "csv_line_number": 877718,
+      "chunk_number": 8,
+      "id_value": "Total amount funded in policy code 1: 2063142975",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 2063142975"
+      }
+    },
+    {
+      "csv_line_number": 877719,
+      "chunk_number": 8,
+      "id_value": "Total amount funded in policy code 2: 823319310",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 823319310"
+      }
+    },
+    {
+      "csv_line_number": 983171,
+      "chunk_number": 9,
+      "id_value": "Total amount funded in policy code 1: 1538432075",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 1538432075"
+      }
+    },
+    {
+      "csv_line_number": 983172,
+      "chunk_number": 9,
+      "id_value": "Total amount funded in policy code 2: 608903141",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 608903141"
+      }
+    },
+    {
+      "csv_line_number": 1117060,
+      "chunk_number": 11,
+      "id_value": "Total amount funded in policy code 1: 2087217200",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 2087217200"
+      }
+    },
+    {
+      "csv_line_number": 1117061,
+      "chunk_number": 11,
+      "id_value": "Total amount funded in policy code 2: 662815446",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 662815446"
+      }
+    },
+    {
+      "csv_line_number": 1352691,
+      "chunk_number": 13,
+      "id_value": "Total amount funded in policy code 1: 3503840175",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 3503840175"
+      }
+    },
+    {
+      "csv_line_number": 1352692,
+      "chunk_number": 13,
+      "id_value": "Total amount funded in policy code 2: 873652739",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 873652739"
+      }
+    },
+    {
+      "csv_line_number": 1481105,
+      "chunk_number": 14,
+      "id_value": "Total amount funded in policy code 1: 2050909275",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 2050909275"
+      }
+    },
+    {
+      "csv_line_number": 1481106,
+      "chunk_number": 14,
+      "id_value": "Total amount funded in policy code 2: 820109297",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 820109297"
+      }
+    },
+    {
+      "csv_line_number": 1611879,
+      "chunk_number": 16,
+      "id_value": "Total amount funded in policy code 1: 2080429200",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 2080429200"
+      }
+    },
+    {
+      "csv_line_number": 1611880,
+      "chunk_number": 16,
+      "id_value": "Total amount funded in policy code 2: 737901574",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 737901574"
+      }
+    },
+    {
+      "csv_line_number": 1651667,
+      "chunk_number": 16,
+      "id_value": "Loans that do not meet the credit policy",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Loans that do not meet the credit policy"
+      }
+    },
+    {
+      "csv_line_number": 1654417,
+      "chunk_number": 16,
+      "id_value": "Total amount funded in policy code 1: 460296150",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 460296150"
+      }
+    },
+    {
+      "csv_line_number": 1654418,
+      "chunk_number": 16,
+      "id_value": "Total amount funded in policy code 2: 0",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 0"
+      }
+    },
+    {
+      "csv_line_number": 1751198,
+      "chunk_number": 17,
+      "id_value": "Total amount funded in policy code 1: 1437969475",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 1437969475"
+      }
+    },
+    {
+      "csv_line_number": 1751199,
+      "chunk_number": 17,
+      "id_value": "Total amount funded in policy code 2: 520780182",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 520780182"
+      }
+    },
+    {
+      "csv_line_number": 1939381,
+      "chunk_number": 19,
+      "id_value": "Total amount funded in policy code 1: 2700702175",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 2700702175"
+      }
+    },
+    {
+      "csv_line_number": 1939382,
+      "chunk_number": 19,
+      "id_value": "Total amount funded in policy code 2: 81866225",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 81866225"
+      }
+    },
+    {
+      "csv_line_number": 2038503,
+      "chunk_number": 20,
+      "id_value": "Total amount funded in policy code 1: 1404586950",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 1404586950"
+      }
+    },
+    {
+      "csv_line_number": 2038504,
+      "chunk_number": 20,
+      "id_value": "Total amount funded in policy code 2: 567447023",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 567447023"
+      }
+    },
+    {
+      "csv_line_number": 2157153,
+      "chunk_number": 21,
+      "id_value": "Total amount funded in policy code 1: 1817354125",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 1817354125"
+      }
+    },
+    {
+      "csv_line_number": 2157154,
+      "chunk_number": 21,
+      "id_value": "Total amount funded in policy code 2: 620899600",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 620899600"
+      }
+    },
+    {
+      "csv_line_number": 2260701,
+      "chunk_number": 22,
+      "id_value": "Total amount funded in policy code 1: 1465324575",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 1: 1465324575"
+      }
+    },
+    {
+      "csv_line_number": 2260702,
+      "chunk_number": 22,
+      "id_value": "Total amount funded in policy code 2: 521953170",
+      "loan_amnt": "nan",
+      "non_null_fields_count": 1,
+      "non_null_fields": {
+        "id": "Total amount funded in policy code 2: 521953170"
+      }
+    }
+  ]
+}

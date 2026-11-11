@@ -1,0 +1,4 @@
+2026-11-11T10:07:24.770103+00:00 [DATASET: accepted] [CATEGORY: LEGITIMATE_RERUN] [CHUNK: 1] Batch of 1 records already present in fact_accepted_loans. Idempotently skipped without duplicate insertion.
+2026-11-11T10:07:24.802861+00:00 [DATASET: accepted] [CATEGORY: INTRA_CHUNK_DUPLICATE] [CHUNK: 2] ID: AUDIT_102 - Duplicate loan_id within chunk 2
+2026-11-11T10:07:24.807993+00:00 [DATASET: accepted] [CATEGORY: DATA_COLLISION] [CHUNK: 2] Partial collision: 1 of 2 IDs already exist in fact_accepted_loans!
+2026-11-11T10:07:24.808702+00:00 [DATASET: accepted] [CATEGORY: DATA_COLLISION] [CHUNK: 2] ID: AUDIT_101 - Duplicate loan_id in fact_accepted_loans; record ignored by INSERT OR IGNORE

@@ -1,0 +1,237 @@
+///$tab Main
+// ==============================================================================================
+// NEXVIA TECHNOLOGIES (DA-04) — FINANCIAL ANALYTICS & CREDIT RISK SCORECARD SYSTEM
+// Qlik Sense Enterprise / Qlik Cloud Authoritative Data Load Script
+//
+// Component: Task 4 — Interactive BI & Executive Portfolio Dashboard
+// Script Name: load_script.qvs
+// Target Platform: Qlik Sense Desktop / Qlik Sense Enterprise on Windows / Qlik Cloud SaaS
+// Note: In the local development environment, Qlik Sense Desktop was unavailable.
+//       This load script is syntactically validated and designed for direct Qlik Sense ingestion.
+// ==============================================================================================
+
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$#,##0.00;($#,##0.00)';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='YYYY-MM-DD';
+SET TimestampFormat='YYYY-MM-DD h:mm:ss[.fff] TT';
+SET FirstWeekDay=6;
+SET BrokenWeeks=1;
+SET ReferenceDay=1;
+SET FirstMonthOfYear=1;
+SET CollationLocale='en-US';
+
+// Configure data connection path (override with lib:// connection in Qlik Cloud / Server)
+SET vDataPath = 'data/';
+
+///$tab PortfolioMonthly
+// ==============================================================================================
+// Table 1: PortfolioMonthly (P&L, Cash Inflows, and Credit Loss Metrics)
+// Grain: Month (Year-Month) x Grade (A-G) x Term (36, 60 months)
+// Source: vw_portfolio_vintage_performance / qlik_portfolio_summary.csv
+// Authoritative Reconciled Totals:
+//   - Cumulative Funded Amount: $34,004,208,600.00
+//   - Cumulative Principal Received: $21,489,393,643.58
+//   - Cumulative Interest Income: $5,496,560,266.06
+//   - Net Realized Credit Loss: $2,733,766,666.67
+// ==============================================================================================
+
+PortfolioMonthly:
+LOAD
+    year                                                AS IssueYear,
+    year_month                                          AS IssueYearMonth,
+    grade                                               AS LoanGrade,
+    term                                                AS LoanTermMonths,
+    // Synthetic Associative Keys
+    year_month & '|' & grade & '|' & term               AS %Key_Cohort,
+    grade                                               AS %Key_Grade,
+    
+    // Core Volume and Financial Metrics
+    Num(loan_count, '#,##0')                            AS MonthlyLoanCount,
+    Money(funded_amount)                                AS MonthlyFundedAmount,
+    Money(principal_received)                           AS MonthlyPrincipalReceived,
+    Money(interest_income)                              AS MonthlyInterestIncome,
+    Money(late_fee_income)                              AS MonthlyLateFeeIncome,
+    Money(recoveries)                                   AS MonthlyGrossRecoveries,
+    Money(collection_cost)                              AS MonthlyCollectionCost,
+    Money(net_recoveries)                               AS MonthlyNetRecoveries,
+    Money(gross_charge_off_principal)                   AS MonthlyGrossChargeOffPrincipal,
+    Money(net_realized_credit_loss)                     AS MonthlyNetRealizedCreditLoss,
+    Money(total_cash_received)                          AS MonthlyTotalCashReceived,
+    Money(net_cash_after_collection_cost)               AS MonthlyNetCashAfterCollectionCost,
+    Num(weighted_avg_interest_rate, '0.0000%')          AS WeightedAverageInterestRate
+FROM [$(vDataPath)qlik_portfolio_summary.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq);
+
+///$tab VintagePerformance
+// ==============================================================================================
+// Table 2: VintagePerformance (Detailed Vintage Default Curves & Margin Analysis)
+// Grain: Cohort Vintage Month x Sub-Grade (A1-G5) x Term (36, 60 months)
+// Source: vw_portfolio_vintage_performance / qlik_vintage_performance.csv
+// ==============================================================================================
+
+VintagePerformance:
+LOAD
+    issue_year                                          AS VintageIssueYear,
+    issue_year_month                                    AS VintageIssueYearMonth,
+    grade                                               AS VintageGrade,
+    sub_grade                                           AS VintageSubGrade,
+    term_months                                         AS VintageTermMonths,
+    // Synthetic Associative Key
+    issue_year_month & '|' & grade & '|' & term_months   AS %Key_Cohort,
+    
+    Num(loan_count, '#,##0')                            AS VintageLoanCount,
+    Money(funded_amount)                                AS VintageFundedAmount,
+    Num(weighted_avg_interest_rate, '0.0000%')          AS VintageWAC,
+    Money(principal_received)                           AS VintagePrincipalReceived,
+    Money(interest_income)                              AS VintageInterestIncome,
+    Money(gross_recoveries)                             AS VintageGrossRecoveries,
+    Money(collection_cost)                              AS VintageCollectionCost,
+    Money(net_recoveries)                               AS VintageNetRecoveries,
+    Num(confirmed_default_count, '#,##0')               AS VintageConfirmedDefaultCount,
+    Num(default_rate_pct, '0.00%')                      AS VintageDefaultRatePct,
+    Money(gross_charge_off_principal)                   AS VintageGrossChargeOffPrincipal,
+    Money(net_realized_credit_loss)                     AS VintageNetRealizedCreditLoss,
+    Num(principal_recovery_rate_pct, '0.00%')           AS VintagePrincipalRecoveryRatePct,
+    Money(total_cash_received)                          AS VintageTotalCashReceived,
+    Money(net_cash_after_collection_cost)               AS VintageNetCashAfterCollectionCost,
+    Num(net_cash_margin_pct, '0.00%')                   AS VintageNetCashMarginPct
+FROM [$(vDataPath)qlik_vintage_performance.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq);
+
+///$tab RiskBands
+// ==============================================================================================
+// Table 3: RiskBands (Authoritative 6 Neutral Risk Tiers & Score-to-PD Calibration)
+// Grain: Risk Tier (1 to 6)
+// Source: reports/credit_risk_risk_bands.json / qlik_scorecard_bands.csv
+// Key Rules: Monotonic default rate ordering from Tier 1 (6.04%) to Tier 6 (43.27%)
+// ==============================================================================================
+
+RiskBands:
+LOAD
+    risk_tier                                           AS RiskTier,
+    risk_band                                           AS RiskBandName,
+    score_range                                         AS RiskScoreRange,
+    Num(portfolio_share_pct, '0.00%')                   AS PortfolioSharePct,
+    Num(actual_bad_rate_pct, '0.00%')                   AS ActualBadRatePct,
+    Num(modeled_bad_rate_pct, '0.00%')                  AS ModeledBadRatePct,
+    Num(bad_capture_pct, '0.00%')                       AS BadCapturePct,
+    Num(cumulative_bad_capture_pct, '0.00%')            AS CumulativeBadCapturePct,
+    risk_tier                                           AS %Key_RiskTier
+FROM [$(vDataPath)qlik_scorecard_bands.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq);
+
+///$tab ScorecardPoints
+// ==============================================================================================
+// Table 4: ScorecardPoints (Production Integer Points Lookup Table for 7 Predictors)
+// Grain: Predictor Attribute x Bin Range
+// Source: reports/credit_risk_scorecard_points.csv / qlik_scorecard_points.csv
+// Scaling: Base Score 600 at 50:1 Good:Bad odds, PDO = 20 points, Factor = 28.8539, Offset = 487.1229
+// ==============================================================================================
+
+ScorecardPoints:
+LOAD
+    feature                                             AS ScorecardFeature,
+    bin_range                                           AS ScorecardBinRange,
+    Num(population_count, '#,##0')                      AS BinPopulationCount,
+    Num(bad_rate, '0.00%')                              AS BinBadRatePct,
+    Num(woe, '0.0000')                                  AS BinWOE,
+    Num(scorecard_points, '#,##0')                      AS AssignedScorecardPoints
+FROM [$(vDataPath)qlik_scorecard_points.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq);
+
+///$tab OOTMetrics
+// ==============================================================================================
+// Table 5: OOTMetrics (Temporal Out-of-Time Discrimination & Stability Verification)
+// Grain: Cohort Sample (In-Sample 2012-2015 vs OOT 2016)
+// Source: reports/credit_risk_oot_validation.json / qlik_oot_metrics.csv
+// Authoritative Verification:
+//   - 2016 OOT ROC-AUC: 0.6770 (In-Sample: 0.6904, Delta: -0.0134, <0.015 stability limit)
+//   - 2016 OOT KS Statistic: 25.15% (In-Sample: 27.46%)
+//   - 2016 OOT Bad Rate: 23.29% (Macroeconomic vintage drift)
+// ==============================================================================================
+
+OOTMetrics:
+LOAD
+    cohort_type                                         AS CohortType,
+    vintage_period                                      AS VintagePeriod,
+    Num(sample_size, '#,##0')                           AS CohortSampleSize,
+    Num(default_count, '#,##0')                         AS CohortDefaultCount,
+    Num(bad_rate_pct, '0.00%')                          AS CohortBadRatePct,
+    Num(roc_auc, '0.0000')                              AS ModelROCAUC,
+    Num(gini, '0.0000')                                 AS ModelGini,
+    Num(ks_statistic_pct, '0.00%')                      AS ModelKSStatisticPct,
+    Num(pr_auc, '0.0000')                               AS ModelPRAUC,
+    Num(brier_score, '0.0000')                          AS ModelBrierScore
+FROM [$(vDataPath)qlik_oot_metrics.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq);
+
+///$tab GeoSummary
+// ==============================================================================================
+// Table 6: GeoSummary (Geographic Portfolio Distribution and Active Balances)
+// Grain: US State (51 states/territories) x Census Region
+// Source: fact_accepted_loans + dim_geography / qlik_geo_summary.csv
+// Authoritative Total Active Gross Outstanding: $9,510,001,923.03
+// ==============================================================================================
+
+GeoSummary:
+LOAD
+    state_code                                          AS StateCode,
+    state_name                                          AS StateName,
+    census_region                                       AS CensusRegion,
+    Num(loan_count, '#,##0')                            AS StateLoanCount,
+    Money(funded_amount)                                AS StateFundedAmount,
+    Money(active_outstanding)                           AS StateActiveGrossOutstanding,
+    state_code                                          AS %Key_State
+FROM [$(vDataPath)qlik_geo_summary.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq);
+
+///$tab SolvencyConstants
+// ==============================================================================================
+// Table 7: PortfolioSolvencySummary (Headline Solvency & Balance Sheet Reserve KPIs)
+// Authoritative Source: vw_portfolio_balance_sheet_summary
+// ==============================================================================================
+
+PortfolioSolvencySummary:
+LOAD * INLINE [
+    SolvencyMetric, MetricValue, FormattedDisplay
+    'Total Funded Amount', 34004208600.00, '$34.00B'
+    'Cumulative Principal Received', 21489393643.58, '$21.49B'
+    'Active Gross Loan Outstanding', 9510001923.03, '$9.51B'
+    'Non-Performing Loan (NPL) Balance', 244246366.02, '$244.25M'
+    'Non-Performing Loan (NPL) Ratio', 0.025683, '2.57%'
+    'Analytical Model-Based Loss Reserve', 772880427.48, '$772.88M'
+    'Net Loan Portfolio Carrying Value', 8737121495.55, '$8.74B'
+];
+
+// ==============================================================================================
+// Master Calendar (Autonomous Temporal Hierarchy)
+// ==============================================================================================
+
+TempCalendar:
+LOAD
+    Date(MinDate + IterNo() - 1) AS CalendarDate
+WHILE (MinDate + IterNo() - 1) <= MaxDate;
+LOAD
+    Date#('2007-06-01', 'YYYY-MM-DD') AS MinDate,
+    Date#('2018-12-31', 'YYYY-MM-DD') AS MaxDate
+AUTOGENERATE 1;
+
+MasterCalendar:
+LOAD
+    CalendarDate                                        AS MasterDate,
+    Year(CalendarDate)                                  AS MasterYear,
+    'Q' & Ceil(Month(CalendarDate)/3)                   AS MasterQuarter,
+    Month(CalendarDate)                                 AS MasterMonth,
+    Date(MonthStart(CalendarDate), 'YYYY-MM')           AS MasterYearMonth
+RESIDENT TempCalendar;
+
+DROP TABLE TempCalendar;
+
+// ==============================================================================================
+// END OF QLIK SENSE LOAD SCRIPT
+// ==============================================================================================
+

@@ -1,0 +1,124 @@
+{
+  "timestamp": "2026-11-09T11:33:00+00:00",
+  "project_id": "DA-04",
+  "task": "Task 2 — Phase 1: SQL Analytical Reporting Layer",
+  "framing": "Loan Portfolio Financial Statement & Solvency Report",
+  "status": "PASS",
+  "accounting_scope_and_limitations": {
+    "data_nature": "Loan-level servicing and cash-flow contract records from Lending Club (2,260,668 accepted loans). Not a corporate double-entry general ledger.",
+    "unavailable_corporate_items": [
+      "Corporate treasury cash and operating bank accounts",
+      "Corporate debt, notes payable, and credit borrowing facility liabilities",
+      "Shareholders' equity, contributed capital, and retained earnings",
+      "Corporate operating expenses (OpEx: executive salaries, software dev, CAC, facilities)",
+      "Corporate income tax calculations and statutory net income"
+    ],
+    "approved_framing_standard": "Loan Portfolio Financial Statement & Solvency Report (institutional loan trust / SPV standard)"
+  },
+  "budget_status": {
+    "table_name": "dim_financial_budget",
+    "row_count": 0,
+    "status": "UNTOUCHED_ZERO_ROWS",
+    "note": "No synthetic budget values fabricated. Budget variance dormant until official supply."
+  },
+  "warehouse_source_totals": {
+    "total_loans": 2260668,
+    "funded_amount": 34004208600.0,
+    "principal_received": 21489393643.58,
+    "interest_income": 5496560266.06,
+    "late_fee_income": 3432718.19,
+    "gross_recoveries": 325262956.86,
+    "collection_cost": 54216619.2,
+    "net_recoveries": 271046337.67,
+    "confirmed_default_count": 269360,
+    "gross_charge_offs": 3004813004.34,
+    "net_credit_loss": 2733766666.67,
+    "total_cash_received": 27314649582.62,
+    "net_cash_after_collection_cost": 27260432963.43
+  },
+  "monthly_pnl_view_totals": {
+    "view_name": "vw_portfolio_pnl_monthly",
+    "vintage_months_count": 139,
+    "min_vintage_month": "2007-06",
+    "max_vintage_month": "2018-12",
+    "total_loans": 2260668,
+    "funded_amount": 34004208600.0,
+    "principal_received": 21489393643.58,
+    "interest_income": 5496560266.06,
+    "late_fee_income": 3432718.19,
+    "gross_recoveries": 325262956.86,
+    "collection_cost": 54216619.2,
+    "net_recoveries": 271046337.67,
+    "confirmed_default_count": 269360,
+    "gross_charge_offs": 3004813004.34,
+    "net_credit_loss": 2733766666.67,
+    "total_cash_received": 27314649582.62,
+    "net_cash_after_collection_cost": 27260432963.43
+  },
+  "monthly_pnl_variances": {
+    "total_loans_variance": 0,
+    "funded_amount_variance": 0.0,
+    "principal_received_variance": 0.0,
+    "interest_income_variance": 0.0,
+    "late_fee_income_variance": 0.0,
+    "gross_recoveries_variance": 0.0,
+    "collection_cost_variance": 0.0,
+    "net_recoveries_variance": 0.0,
+    "confirmed_default_count_variance": 0,
+    "gross_charge_offs_variance": 0.0,
+    "net_credit_loss_variance": 0.0,
+    "total_cash_received_variance": 0.0,
+    "net_cash_after_collection_cost_variance": 0.0
+  },
+  "balance_sheet_solvency_metrics": {
+    "view_name": "vw_portfolio_balance_sheet_summary",
+    "total_funded_amount": 34004208600.0,
+    "cumulative_principal_received": 21489393643.58,
+    "active_gross_loan_outstanding": 9510001923.03,
+    "NPL_balance": 244246366.02,
+    "NPL_ratio_pct": 2.5683,
+    "analytical_loss_reserve": 772880427.48,
+    "analytical_loss_reserve_methodology": "Model-based reserve derived from dim_loan_grade.illustrative_target_loss_cap applied to active unclosed loans (is_seasoned_closed = 0). Clearly labeled as analytical benchmark, not statutory ALLL/CECL.",
+    "net_loan_portfolio_carrying_value": 8737121495.55
+  },
+  "vintage_performance_view_totals": {
+    "view_name": "vw_portfolio_vintage_performance",
+    "total_cohort_rows": 7642,
+    "total_loans": 2260668,
+    "funded_amount": 34004208600.0,
+    "principal_received": 21489393643.58,
+    "interest_income": 5496560266.06,
+    "late_fee_income": 3432718.19,
+    "gross_recoveries": 325262956.86,
+    "collection_cost": 54216619.2,
+    "net_recoveries": 271046337.67,
+    "confirmed_default_count": 269360,
+    "gross_charge_offs": 3004813004.34,
+    "net_credit_loss": 2733766666.67,
+    "total_cash_received": 27314649582.62,
+    "net_cash_after_collection_cost": 27260432963.43
+  },
+  "vintage_performance_variances": {
+    "total_loans_variance": 0,
+    "funded_amount_variance": 0.0,
+    "principal_received_variance": 0.0,
+    "interest_income_variance": 0.0,
+    "late_fee_income_variance": 0.0,
+    "gross_recoveries_variance": 0.0,
+    "collection_cost_variance": 0.0,
+    "net_recoveries_variance": 0.0,
+    "confirmed_default_count_variance": 0,
+    "gross_charge_offs_variance": 0.0,
+    "net_credit_loss_variance": 0.0,
+    "total_cash_received_variance": 0.0,
+    "net_cash_after_collection_cost_variance": 0.0
+  },
+  "test_execution_summary": {
+    "suite": "pytest tests/test_financial_reporting.py",
+    "total_tests": 9,
+    "passed": 9,
+    "failed": 0,
+    "status": "ALL_TESTS_PASSED"
+  }
+}
+

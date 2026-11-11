@@ -1,0 +1,650 @@
+{
+  "report_title": "Budget vs. Actual Variance & Driver Decomposition Analysis",
+  "official_budget_data_available": false,
+  "governance_disclosure": "OFFICIAL BUDGET UNAVAILABLE: Corporate budget figures were not provided in the assessment archive. All budget comparisons reflect an ILLUSTRATIVE SCENARIO ONLY designed for methodological demonstration. Official actuals are queried dynamically from vw_portfolio_pnl_monthly.",
+  "scenario_metadata": {
+    "scenario_name": "ILLUSTRATIVE SCENARIO \u2014 NOT OFFICIAL BUDGET",
+    "methodology": "Target baseline origination volume with target contractual yields and loss caps",
+    "target_volume_expansion": "+2.93% vs Actuals ($35.0B target)",
+    "target_contractual_yield": "16.50%",
+    "target_net_credit_loss_rate": "7.50%"
+  },
+  "actual_source_views": [
+    "vw_portfolio_pnl_monthly",
+    "vw_portfolio_vintage_performance"
+  ],
+  "cumulative_portfolio_reconciliation": {
+    "actual_funded_amount": 34004208600.0,
+    "authoritative_task2_funded": 34004208600.0,
+    "actual_interest_income": 5496560266.06,
+    "authoritative_task2_interest": 5496560266.06,
+    "actual_net_realized_credit_loss": 2733766666.673189,
+    "authoritative_task2_loss": 2733766666.67,
+    "is_fully_reconciled": true
+  },
+  "cumulative_summary": {
+    "funded_amount": {
+      "actual": 34004208600.0,
+      "budget": 35000531912.01,
+      "absolute_variance": -996323312.01,
+      "variance_pct": -2.85,
+      "status": "Unfavorable",
+      "is_cost_item": false
+    },
+    "interest_income": {
+      "actual": 5496560266.06,
+      "budget": 5775087765.49,
+      "absolute_variance": -278527499.43,
+      "variance_pct": -4.82,
+      "status": "Unfavorable",
+      "is_cost_item": false
+    },
+    "net_realized_credit_loss": {
+      "actual": 2733766666.67,
+      "budget": 2625039893.39,
+      "absolute_variance": 108726773.28,
+      "variance_pct": 4.14,
+      "status": "Unfavorable",
+      "is_cost_item": true
+    },
+    "total_cash_received": {
+      "actual": 27314649582.62,
+      "budget": 27894120642.82,
+      "absolute_variance": -579471060.2,
+      "variance_pct": -2.08,
+      "status": "Unfavorable",
+      "is_cost_item": false
+    },
+    "cumulative_interest_drivers": {
+      "actual_volume": 34004208600.0,
+      "budget_volume": 35000531912.01,
+      "actual_effective_rate": 0.161644,
+      "budget_effective_rate": 0.165,
+      "total_variance": -278527499.43,
+      "volume_variance": -164393346.48,
+      "rate_variance": -117478283.63,
+      "mix_variance": 3344130.68,
+      "sum_of_components": -278527499.43,
+      "is_reconciled": true,
+      "primary_driver": "Volume"
+    }
+  },
+  "annual_breakdown": [
+    {
+      "year": 2007,
+      "funded_amount": {
+        "actual": 4791550.0,
+        "budget": 4931942.42,
+        "absolute_variance": -140392.42,
+        "variance_pct": -2.85,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income": {
+        "actual": 741692.65,
+        "budget": 813770.5,
+        "absolute_variance": -72077.85,
+        "variance_pct": -8.86,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "net_realized_credit_loss": {
+        "actual": 831191.44,
+        "budget": 369895.68,
+        "absolute_variance": 461295.76,
+        "variance_pct": 124.71,
+        "status": "Unfavorable",
+        "is_cost_item": true
+      },
+      "total_cash_received": {
+        "actual": 4724421.58,
+        "budget": 4814602.5,
+        "absolute_variance": -90180.92,
+        "variance_pct": -1.87,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income_drivers": {
+        "actual_volume": 4791550.0,
+        "budget_volume": 4931942.42,
+        "actual_effective_rate": 0.154792,
+        "budget_effective_rate": 0.165,
+        "total_variance": -72077.85,
+        "volume_variance": -23164.75,
+        "rate_variance": -50346.25,
+        "mix_variance": 1433.15,
+        "sum_of_components": -72077.85,
+        "is_reconciled": true,
+        "primary_driver": "Rate"
+      }
+    },
+    {
+      "year": 2008,
+      "funded_amount": {
+        "actual": 19975025.0,
+        "budget": 20560293.23,
+        "absolute_variance": -585268.23,
+        "variance_pct": -2.85,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income": {
+        "actual": 3224082.66,
+        "budget": 3392448.38,
+        "absolute_variance": -168365.72,
+        "variance_pct": -4.96,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "net_realized_credit_loss": {
+        "actual": 2913679.06,
+        "budget": 1542021.99,
+        "absolute_variance": 1371657.07,
+        "variance_pct": 88.95,
+        "status": "Unfavorable",
+        "is_cost_item": true
+      },
+      "total_cash_received": {
+        "actual": 20347675.35,
+        "budget": 20771815.41,
+        "absolute_variance": -424140.06,
+        "variance_pct": -2.04,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income_drivers": {
+        "actual_volume": 19975025.0,
+        "budget_volume": 20560293.23,
+        "actual_effective_rate": 0.161406,
+        "budget_effective_rate": 0.165,
+        "total_variance": -168365.72,
+        "volume_variance": -96569.26,
+        "rate_variance": -73900.1,
+        "mix_variance": 2103.64,
+        "sum_of_components": -168365.72,
+        "is_reconciled": true,
+        "primary_driver": "Volume"
+      }
+    },
+    {
+      "year": 2009,
+      "funded_amount": {
+        "actual": 51814750.0,
+        "budget": 53332922.18,
+        "absolute_variance": -1518172.18,
+        "variance_pct": -2.85,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income": {
+        "actual": 8655514.72,
+        "budget": 8799932.16,
+        "absolute_variance": -144417.44,
+        "variance_pct": -1.64,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "net_realized_credit_loss": {
+        "actual": 4650726.03,
+        "budget": 3999969.16,
+        "absolute_variance": 650756.87,
+        "variance_pct": 16.27,
+        "status": "Unfavorable",
+        "is_cost_item": true
+      },
+      "total_cash_received": {
+        "actual": 55942753.75,
+        "budget": 56989405.78,
+        "absolute_variance": -1046652.03,
+        "variance_pct": -1.84,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income_drivers": {
+        "actual_volume": 51814750.0,
+        "budget_volume": 53332922.18,
+        "actual_effective_rate": 0.167047,
+        "budget_effective_rate": 0.165,
+        "total_variance": -144417.44,
+        "volume_variance": -250498.41,
+        "rate_variance": 109189.14,
+        "mix_variance": -3108.17,
+        "sum_of_components": -144417.44,
+        "is_reconciled": true,
+        "primary_driver": "Volume"
+      }
+    },
+    {
+      "year": 2010,
+      "funded_amount": {
+        "actual": 126351175.0,
+        "budget": 130053264.43,
+        "absolute_variance": -3702089.43,
+        "variance_pct": -2.85,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income": {
+        "actual": 24915535.01,
+        "budget": 21458788.63,
+        "absolute_variance": 3456746.38,
+        "variance_pct": 16.11,
+        "status": "Favorable",
+        "is_cost_item": false
+      },
+      "net_realized_credit_loss": {
+        "actual": 10595893.94,
+        "budget": 9753994.83,
+        "absolute_variance": 841899.11,
+        "variance_pct": 8.63,
+        "status": "Unfavorable",
+        "is_cost_item": true
+      },
+      "total_cash_received": {
+        "actual": 140870528.65,
+        "budget": 139697099.53,
+        "absolute_variance": 1173429.12,
+        "variance_pct": 0.84,
+        "status": "Favorable",
+        "is_cost_item": false
+      },
+      "interest_income_drivers": {
+        "actual_volume": 126351175.0,
+        "budget_volume": 130053264.43,
+        "actual_effective_rate": 0.197193,
+        "budget_effective_rate": 0.165,
+        "total_variance": 3456746.38,
+        "volume_variance": -610844.76,
+        "rate_variance": 4186771.56,
+        "mix_variance": -119180.42,
+        "sum_of_components": 3456746.38,
+        "is_reconciled": true,
+        "primary_driver": "Rate"
+      }
+    },
+    {
+      "year": 2011,
+      "funded_amount": {
+        "actual": 257363650.0,
+        "budget": 264904404.95,
+        "absolute_variance": -7540754.95,
+        "variance_pct": -2.85,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income": {
+        "actual": 57740785.67,
+        "budget": 43709226.82,
+        "absolute_variance": 14031558.85,
+        "variance_pct": 32.1,
+        "status": "Favorable",
+        "is_cost_item": false
+      },
+      "net_realized_credit_loss": {
+        "actual": 25973585.09,
+        "budget": 19867830.37,
+        "absolute_variance": 6105754.72,
+        "variance_pct": 30.73,
+        "status": "Unfavorable",
+        "is_cost_item": true
+      },
+      "total_cash_received": {
+        "actual": 289401205.11,
+        "budget": 279514677.07,
+        "absolute_variance": 9886528.04,
+        "variance_pct": 3.54,
+        "status": "Favorable",
+        "is_cost_item": false
+      },
+      "interest_income_drivers": {
+        "actual_volume": 257363650.0,
+        "budget_volume": 264904404.95,
+        "actual_effective_rate": 0.224355,
+        "budget_effective_rate": 0.165,
+        "total_variance": 14031558.85,
+        "volume_variance": -1244224.57,
+        "rate_variance": 15723363.87,
+        "mix_variance": -447580.45,
+        "sum_of_components": 14031558.85,
+        "is_reconciled": true,
+        "primary_driver": "Rate"
+      }
+    },
+    {
+      "year": 2012,
+      "funded_amount": {
+        "actual": 717942625.0,
+        "budget": 738978343.91,
+        "absolute_variance": -21035718.91,
+        "variance_pct": -2.85,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income": {
+        "actual": 161978492.23,
+        "budget": 121931426.75,
+        "absolute_variance": 40047065.48,
+        "variance_pct": 32.84,
+        "status": "Favorable",
+        "is_cost_item": false
+      },
+      "net_realized_credit_loss": {
+        "actual": 73665106.41,
+        "budget": 55423375.79,
+        "absolute_variance": 18241730.62,
+        "variance_pct": 32.91,
+        "status": "Unfavorable",
+        "is_cost_item": true
+      },
+      "total_cash_received": {
+        "actual": 807082603.9,
+        "budget": 776824345.69,
+        "absolute_variance": 30258258.21,
+        "variance_pct": 3.9,
+        "status": "Favorable",
+        "is_cost_item": false
+      },
+      "interest_income_drivers": {
+        "actual_volume": 717942625.0,
+        "budget_volume": 738978343.91,
+        "actual_effective_rate": 0.225615,
+        "budget_effective_rate": 0.165,
+        "total_variance": 40047065.48,
+        "volume_variance": -3470893.62,
+        "rate_variance": 44793035.3,
+        "mix_variance": -1275076.2,
+        "sum_of_components": 40047065.48,
+        "is_reconciled": true,
+        "primary_driver": "Rate"
+      }
+    },
+    {
+      "year": 2013,
+      "funded_amount": {
+        "actual": 1982759550.0,
+        "budget": 2040854404.82,
+        "absolute_variance": -58094854.82,
+        "variance_pct": -2.85,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income": {
+        "actual": 463422873.84,
+        "budget": 336740976.8,
+        "absolute_variance": 126681897.04,
+        "variance_pct": 37.62,
+        "status": "Favorable",
+        "is_cost_item": false
+      },
+      "net_realized_credit_loss": {
+        "actual": 186074368.08,
+        "budget": 153064080.36,
+        "absolute_variance": 33010287.72,
+        "variance_pct": 21.57,
+        "status": "Unfavorable",
+        "is_cost_item": true
+      },
+      "total_cash_received": {
+        "actual": 2263729121.73,
+        "budget": 2161032031.84,
+        "absolute_variance": 102697089.89,
+        "variance_pct": 4.75,
+        "status": "Favorable",
+        "is_cost_item": false
+      },
+      "interest_income_drivers": {
+        "actual_volume": 1982759550.0,
+        "budget_volume": 2040854404.82,
+        "actual_effective_rate": 0.233726,
+        "budget_effective_rate": 0.165,
+        "total_variance": 126681897.04,
+        "volume_variance": -9585651.05,
+        "rate_variance": 140260187.24,
+        "mix_variance": -3992639.16,
+        "sum_of_components": 126681897.04,
+        "is_reconciled": true,
+        "primary_driver": "Rate"
+      }
+    },
+    {
+      "year": 2014,
+      "funded_amount": {
+        "actual": 3503840175.0,
+        "budget": 3606502692.13,
+        "absolute_variance": -102662517.13,
+        "variance_pct": -2.85,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income": {
+        "actual": 779609004.74,
+        "budget": 595072944.2,
+        "absolute_variance": 184536060.54,
+        "variance_pct": 31.01,
+        "status": "Favorable",
+        "is_cost_item": false
+      },
+      "net_realized_credit_loss": {
+        "actual": 371676276.47,
+        "budget": 270487701.91,
+        "absolute_variance": 101188574.56,
+        "variance_pct": 37.41,
+        "status": "Unfavorable",
+        "is_cost_item": true
+      },
+      "total_cash_received": {
+        "actual": 3890029184.75,
+        "budget": 3738890489.32,
+        "absolute_variance": 151138695.43,
+        "variance_pct": 4.04,
+        "status": "Favorable",
+        "is_cost_item": false
+      },
+      "interest_income_drivers": {
+        "actual_volume": 3503840175.0,
+        "budget_volume": 3606502692.13,
+        "actual_effective_rate": 0.222501,
+        "budget_effective_rate": 0.165,
+        "total_variance": 184536060.54,
+        "volume_variance": -16939315.33,
+        "rate_variance": 207378604.38,
+        "mix_variance": -5903228.51,
+        "sum_of_components": 184536060.54,
+        "is_reconciled": true,
+        "primary_driver": "Rate"
+      }
+    },
+    {
+      "year": 2015,
+      "funded_amount": {
+        "actual": 6417608175.0,
+        "budget": 6605644094.53,
+        "absolute_variance": -188035919.53,
+        "variance_pct": -2.85,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income": {
+        "actual": 1265280952.97,
+        "budget": 1089931275.6,
+        "absolute_variance": 175349677.37,
+        "variance_pct": 16.09,
+        "status": "Favorable",
+        "is_cost_item": false
+      },
+      "net_realized_credit_loss": {
+        "actual": 737660975.51,
+        "budget": 495423307.09,
+        "absolute_variance": 242237668.42,
+        "variance_pct": 48.9,
+        "status": "Unfavorable",
+        "is_cost_item": true
+      },
+      "total_cash_received": {
+        "actual": 6648910809.94,
+        "budget": 6528975202.45,
+        "absolute_variance": 119935607.49,
+        "variance_pct": 1.84,
+        "status": "Favorable",
+        "is_cost_item": false
+      },
+      "interest_income_drivers": {
+        "actual_volume": 6417608175.0,
+        "budget_volume": 6605644094.53,
+        "actual_effective_rate": 0.197158,
+        "budget_effective_rate": 0.165,
+        "total_variance": 175349677.37,
+        "volume_variance": -31025926.72,
+        "rate_variance": 212422409.29,
+        "mix_variance": -6046805.2,
+        "sum_of_components": 175349677.37,
+        "is_reconciled": true,
+        "primary_driver": "Rate"
+      }
+    },
+    {
+      "year": 2016,
+      "funded_amount": {
+        "actual": 6400541700.0,
+        "budget": 6588077571.81,
+        "absolute_variance": -187535871.81,
+        "variance_pct": -2.85,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income": {
+        "actual": 1158507333.04,
+        "budget": 1087032799.35,
+        "absolute_variance": 71474533.69,
+        "variance_pct": 6.58,
+        "status": "Favorable",
+        "is_cost_item": false
+      },
+      "net_realized_credit_loss": {
+        "actual": 703154694.48,
+        "budget": 494105817.89,
+        "absolute_variance": 209048876.59,
+        "variance_pct": 42.31,
+        "status": "Unfavorable",
+        "is_cost_item": true
+      },
+      "total_cash_received": {
+        "actual": 6130654551.17,
+        "budget": 6118777957.98,
+        "absolute_variance": 11876593.19,
+        "variance_pct": 0.19,
+        "status": "Favorable",
+        "is_cost_item": false
+      },
+      "interest_income_drivers": {
+        "actual_volume": 6400541700.0,
+        "budget_volume": 6588077571.81,
+        "actual_effective_rate": 0.181001,
+        "budget_effective_rate": 0.165,
+        "total_variance": 71474533.69,
+        "volume_variance": -30943418.85,
+        "rate_variance": 105418798.55,
+        "mix_variance": -3000846.01,
+        "sum_of_components": 71474533.69,
+        "is_reconciled": true,
+        "primary_driver": "Rate"
+      }
+    },
+    {
+      "year": 2017,
+      "funded_amount": {
+        "actual": 6584957075.0,
+        "budget": 6777896317.3,
+        "absolute_variance": -192939242.3,
+        "variance_pct": -2.85,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income": {
+        "actual": 988285725.47,
+        "budget": 1118352892.35,
+        "absolute_variance": -130067166.88,
+        "variance_pct": -11.63,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "net_realized_credit_loss": {
+        "actual": 480505376.92,
+        "budget": 508342223.8,
+        "absolute_variance": -27836846.88,
+        "variance_pct": -5.48,
+        "status": "Favorable",
+        "is_cost_item": true
+      },
+      "total_cash_received": {
+        "actual": 4623813224.35,
+        "budget": 4816016020.83,
+        "absolute_variance": -192202796.48,
+        "variance_pct": -3.99,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income_drivers": {
+        "actual_volume": 6584957075.0,
+        "budget_volume": 6777896317.3,
+        "actual_effective_rate": 0.150082,
+        "budget_effective_rate": 0.165,
+        "total_variance": -130067166.88,
+        "volume_variance": -31834974.98,
+        "rate_variance": -101110395.12,
+        "mix_variance": 2878203.22,
+        "sum_of_components": -130067166.88,
+        "is_reconciled": true,
+        "primary_driver": "Rate"
+      }
+    },
+    {
+      "year": 2018,
+      "funded_amount": {
+        "actual": 7936263150.0,
+        "budget": 8168795660.3,
+        "absolute_variance": -232532510.3,
+        "variance_pct": -2.85,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income": {
+        "actual": 584198273.06,
+        "budget": 1347851283.95,
+        "absolute_variance": -763653010.89,
+        "variance_pct": -56.66,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "net_realized_credit_loss": {
+        "actual": 136064793.23,
+        "budget": 612659674.52,
+        "absolute_variance": -476594881.29,
+        "variance_pct": -77.79,
+        "status": "Favorable",
+        "is_cost_item": true
+      },
+      "total_cash_received": {
+        "actual": 2439143502.35,
+        "budget": 3251816994.42,
+        "absolute_variance": -812673492.07,
+        "variance_pct": -24.99,
+        "status": "Unfavorable",
+        "is_cost_item": false
+      },
+      "interest_income_drivers": {
+        "actual_volume": 7936263150.0,
+        "budget_volume": 8168795660.3,
+        "actual_effective_rate": 0.073611,
+        "budget_effective_rate": 0.165,
+        "total_variance": -763653010.89,
+        "volume_variance": -38367864.2,
+        "rate_variance": -746536001.49,
+        "mix_variance": 21250854.8,
+        "sum_of_components": -763653010.89,
+        "is_reconciled": true,
+        "primary_driver": "Rate"
+      }
+    }
+  ]
+}

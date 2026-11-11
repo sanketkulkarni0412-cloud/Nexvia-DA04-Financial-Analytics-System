@@ -1,0 +1,57 @@
+# ==============================================================================
+# Financial Analytics and Risk Reporting System (DA-04) - Dependencies Manifest
+# Python Target: >= 3.11, < 3.14 (Verified on Python 3.13.1)
+# ==============================================================================
+
+# Core Data Manipulation and Numerical Computing (REQUIRED - TO INSTALL)
+# ------------------------------------------------------------------------------
+# pandas: Core high-performance tabular data structures, time-series, and aggregations
+pandas>=2.2.0
+
+# numpy: Vectorized mathematical computations and array handling
+numpy>=1.26.0
+
+# scipy: Statistical distributions, cumulative density functions, and hypothesis testing
+scipy>=1.13.0
+
+# Database Connectivity and Object-Relational Mapping (PRESENT)
+# ------------------------------------------------------------------------------
+# SQLAlchemy: Enterprise SQL database connection pooling, query building, and ORM
+SQLAlchemy>=2.0.30
+
+# psycopg2-binary: PostgreSQL database driver (if using remote PostgreSQL warehouse)
+psycopg2-binary>=2.9.9
+
+# Machine Learning & Regulatory Credit Risk Scorecards (REQUIRED - TO INSTALL)
+# ------------------------------------------------------------------------------
+# scikit-learn: Logistic regression modeling, ROC-AUC, classification metrics, stratification
+scikit-learn>=1.4.0
+
+# Advanced Excel and Spreadsheet Modeling (REQUIRED - TO INSTALL)
+# ------------------------------------------------------------------------------
+# openpyxl: Reading and writing modern Excel .xlsx workbooks with multiple tabs and formatting
+openpyxl>=3.1.2
+
+# XlsxWriter: High-performance formatted Excel report generation, chart embedding, conditional formatting
+XlsxWriter>=3.2.0
+
+# Data Visualization and Exploratory Data Analysis (REQUIRED - TO INSTALL)
+# ------------------------------------------------------------------------------
+# matplotlib: Foundational static financial plotting (vintage curves, ROC curves)
+matplotlib>=3.8.0
+
+# seaborn: Statistical data visualization, correlation heatmaps, distribution plots
+seaborn>=0.13.0
+
+# Software Testing, Quality Assurance & Data Reconciliation (REQUIRED - TO INSTALL)
+# ------------------------------------------------------------------------------
+# pytest: Unit test runner for financial equations, GL balance reconciliation, and pipeline tests
+pytest>=8.0.0
+
+# System, Automation and Windows Interoperability (PRESENT / OPTIONAL)
+# ------------------------------------------------------------------------------
+# pywin32: Windows COM automation for Excel background manipulation and Power Automate hooks
+pywin32>=306
+
+# python-dotenv: Secure environment variable management (.env config files)
+python-dotenv>=1.0.0

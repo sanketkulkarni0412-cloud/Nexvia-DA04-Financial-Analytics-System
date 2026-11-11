@@ -1,0 +1,36 @@
+{
+  "dataset": "Test (20%)",
+  "sample_size": 269620,
+  "actual_bad_count": 53872,
+  "actual_bad_rate": 0.1998,
+  "roc_auc": 0.683,
+  "gini": 0.3661,
+  "ks_statistic_pct": 26.01,
+  "ks_optimal_threshold": 0.2052,
+  "pr_auc": 0.3507,
+  "brier_score": 0.1484,
+  "metrics_at_0_50": {
+    "threshold": 0.5,
+    "precision": 0.5504,
+    "recall": 0.0425,
+    "f1_score": 0.0789,
+    "confusion_matrix": {
+      "tn": 213878,
+      "fp": 1870,
+      "fn": 51583,
+      "tp": 2289
+    }
+  },
+  "metrics_at_optimal_ks": {
+    "threshold": 0.2052,
+    "precision": 0.3064,
+    "recall": 0.5978,
+    "f1_score": 0.4052,
+    "confusion_matrix": {
+      "tn": 142853,
+      "fp": 72895,
+      "fn": 21666,
+      "tp": 32206
+    }
+  }
+}

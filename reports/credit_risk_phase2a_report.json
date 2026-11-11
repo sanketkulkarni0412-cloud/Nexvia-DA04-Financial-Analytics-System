@@ -1,0 +1,587 @@
+{
+  "report_title": "Nexvia DA-04 Task 3 Phase 2A: Baseline Credit Risk Scorecard Report",
+  "development_population": {
+    "source_filter": "is_seasoned_closed = 1",
+    "total_contracts": 1348099,
+    "train_contracts": 1078479,
+    "test_contracts": 269620,
+    "train_bad_rate": 0.19980732123666756,
+    "test_bad_rate": 0.19980713596914176,
+    "target_definition": "Y = is_confirmed_default (0 = Good, 1 = Bad)"
+  },
+  "feature_selection": {
+    "candidate_features_evaluated": 15,
+    "iv_summary": [
+      {
+        "variable": "term_months",
+        "iv": 0.1734755142479965,
+        "feature_type": "categorical",
+        "predictive_power": "Medium (0.10 - 0.30)"
+      },
+      {
+        "variable": "fico_midpoint",
+        "iv": 0.12040039775342529,
+        "feature_type": "continuous",
+        "predictive_power": "Medium (0.10 - 0.30)"
+      },
+      {
+        "variable": "installment_to_income",
+        "iv": 0.08526777862542209,
+        "feature_type": "continuous",
+        "predictive_power": "Weak (0.02 - 0.10)"
+      },
+      {
+        "variable": "dti",
+        "iv": 0.07031367374014441,
+        "feature_type": "continuous",
+        "predictive_power": "Weak (0.02 - 0.10)"
+      },
+      {
+        "variable": "verification_status",
+        "iv": 0.05522105167050022,
+        "feature_type": "categorical",
+        "predictive_power": "Weak (0.02 - 0.10)"
+      },
+      {
+        "variable": "loan_amnt",
+        "iv": 0.03200268881062124,
+        "feature_type": "continuous",
+        "predictive_power": "Weak (0.02 - 0.10)"
+      },
+      {
+        "variable": "home_ownership_clean",
+        "iv": 0.030993897991628945,
+        "feature_type": "categorical",
+        "predictive_power": "Weak (0.02 - 0.10)"
+      },
+      {
+        "variable": "annual_inc",
+        "iv": 0.028461243606260817,
+        "feature_type": "continuous",
+        "predictive_power": "Weak (0.02 - 0.10)"
+      },
+      {
+        "variable": "revol_util",
+        "iv": 0.022795181679240467,
+        "feature_type": "continuous",
+        "predictive_power": "Weak (0.02 - 0.10)"
+      },
+      {
+        "variable": "credit_history_months",
+        "iv": 0.008345017831121756,
+        "feature_type": "continuous",
+        "predictive_power": "Unpredictive (<0.02)"
+      },
+      {
+        "variable": "emp_length_imputed",
+        "iv": 0.007276247955478404,
+        "feature_type": "continuous",
+        "predictive_power": "Unpredictive (<0.02)"
+      },
+      {
+        "variable": "pub_rec",
+        "iv": 0.006217505121424068,
+        "feature_type": "continuous",
+        "predictive_power": "Unpredictive (<0.02)"
+      },
+      {
+        "variable": "open_acc",
+        "iv": 0.004651406570410639,
+        "feature_type": "continuous",
+        "predictive_power": "Unpredictive (<0.02)"
+      },
+      {
+        "variable": "revol_bal",
+        "iv": 0.0038441967806977983,
+        "feature_type": "continuous",
+        "predictive_power": "Unpredictive (<0.02)"
+      },
+      {
+        "variable": "total_acc",
+        "iv": 0.0018239894205235167,
+        "feature_type": "continuous",
+        "predictive_power": "Unpredictive (<0.02)"
+      }
+    ],
+    "selected_features": [
+      "term_months_woe",
+      "fico_midpoint_woe",
+      "installment_to_income_woe",
+      "dti_woe",
+      "verification_status_woe",
+      "loan_amnt_woe",
+      "home_ownership_clean_woe",
+      "annual_inc_woe",
+      "revol_util_woe"
+    ],
+    "selection_rationale": "Filtered predictors with IV >= 0.02 and strictly pre-origination availability"
+  },
+  "model_specification": {
+    "model_type": "LogisticRegression (Baseline Scorecard)",
+    "solver": "lbfgs",
+    "C": 1.0,
+    "max_iter": 1000,
+    "random_state": 42,
+    "features_used": [
+      "term_months_woe",
+      "fico_midpoint_woe",
+      "installment_to_income_woe",
+      "dti_woe",
+      "verification_status_woe",
+      "loan_amnt_woe",
+      "home_ownership_clean_woe",
+      "annual_inc_woe",
+      "revol_util_woe"
+    ],
+    "num_features": 9,
+    "intercept": -1.3891544376290652,
+    "coefficients": {
+      "term_months_woe": -1.0417005255307372,
+      "fico_midpoint_woe": -0.9832728764628692,
+      "installment_to_income_woe": -0.6648118581593025,
+      "dti_woe": -0.6897645930600735,
+      "verification_status_woe": -0.4519145773760509,
+      "loan_amnt_woe": 0.20209476642415028,
+      "home_ownership_clean_woe": -0.9879540500749007,
+      "annual_inc_woe": -0.22254002069273549,
+      "revol_util_woe": 0.40777174937435445
+    },
+    "is_fitted": true
+  },
+  "model_coefficients": [
+    {
+      "feature": "term_months_woe",
+      "coefficient": -1.0417,
+      "odds_ratio": 0.3529,
+      "woe_direction": "Protective / Risk-Reducing"
+    },
+    {
+      "feature": "fico_midpoint_woe",
+      "coefficient": -0.9833,
+      "odds_ratio": 0.3741,
+      "woe_direction": "Protective / Risk-Reducing"
+    },
+    {
+      "feature": "installment_to_income_woe",
+      "coefficient": -0.6648,
+      "odds_ratio": 0.5144,
+      "woe_direction": "Protective / Risk-Reducing"
+    },
+    {
+      "feature": "dti_woe",
+      "coefficient": -0.6898,
+      "odds_ratio": 0.5017,
+      "woe_direction": "Protective / Risk-Reducing"
+    },
+    {
+      "feature": "verification_status_woe",
+      "coefficient": -0.4519,
+      "odds_ratio": 0.6364,
+      "woe_direction": "Protective / Risk-Reducing"
+    },
+    {
+      "feature": "loan_amnt_woe",
+      "coefficient": 0.2021,
+      "odds_ratio": 1.224,
+      "woe_direction": "Risk-Increasing"
+    },
+    {
+      "feature": "home_ownership_clean_woe",
+      "coefficient": -0.988,
+      "odds_ratio": 0.3723,
+      "woe_direction": "Protective / Risk-Reducing"
+    },
+    {
+      "feature": "annual_inc_woe",
+      "coefficient": -0.2225,
+      "odds_ratio": 0.8005,
+      "woe_direction": "Protective / Risk-Reducing"
+    },
+    {
+      "feature": "revol_util_woe",
+      "coefficient": 0.4078,
+      "odds_ratio": 1.5035,
+      "woe_direction": "Risk-Increasing"
+    },
+    {
+      "feature": "Intercept",
+      "coefficient": -1.3892,
+      "odds_ratio": 0.2493,
+      "woe_direction": "Base Log-Odds"
+    }
+  ],
+  "train_metrics": {
+    "dataset": "Train (80%)",
+    "sample_size": 1078479,
+    "actual_bad_count": 215488,
+    "actual_bad_rate": 0.1998,
+    "roc_auc": 0.6822,
+    "gini": 0.3645,
+    "ks_statistic_pct": 26.13,
+    "ks_optimal_threshold": 0.1972,
+    "pr_auc": 0.3494,
+    "brier_score": 0.1485,
+    "metrics_at_0_50": {
+      "threshold": 0.5,
+      "precision": 0.5392,
+      "recall": 0.0411,
+      "f1_score": 0.0763,
+      "confusion_matrix": {
+        "tn": 855426,
+        "fp": 7565,
+        "fn": 206637,
+        "tp": 8851
+      }
+    },
+    "metrics_at_optimal_ks": {
+      "threshold": 0.1972,
+      "precision": 0.2996,
+      "recall": 0.6277,
+      "f1_score": 0.4056,
+      "confusion_matrix": {
+        "tn": 546761,
+        "fp": 316230,
+        "fn": 80224,
+        "tp": 135264
+      }
+    }
+  },
+  "test_metrics": {
+    "dataset": "Test (20%)",
+    "sample_size": 269620,
+    "actual_bad_count": 53872,
+    "actual_bad_rate": 0.1998,
+    "roc_auc": 0.683,
+    "gini": 0.3661,
+    "ks_statistic_pct": 26.01,
+    "ks_optimal_threshold": 0.2052,
+    "pr_auc": 0.3507,
+    "brier_score": 0.1484,
+    "metrics_at_0_50": {
+      "threshold": 0.5,
+      "precision": 0.5504,
+      "recall": 0.0425,
+      "f1_score": 0.0789,
+      "confusion_matrix": {
+        "tn": 213878,
+        "fp": 1870,
+        "fn": 51583,
+        "tp": 2289
+      }
+    },
+    "metrics_at_optimal_ks": {
+      "threshold": 0.2052,
+      "precision": 0.3064,
+      "recall": 0.5978,
+      "f1_score": 0.4052,
+      "confusion_matrix": {
+        "tn": 142853,
+        "fp": 72895,
+        "fn": 21666,
+        "tp": 32206
+      }
+    }
+  },
+  "decile_calibration": [
+    {
+      "decile": 1,
+      "loan_count": 26962,
+      "bad_count": 1537,
+      "min_predicted_prob": 0.0203,
+      "max_predicted_prob": 0.0836,
+      "mean_predicted_prob": 0.0625,
+      "good_count": 25425,
+      "observed_bad_rate": 0.057,
+      "calibration_ratio": 1.0955,
+      "pct_of_all_bads": 0.02853059103059103,
+      "pct_of_all_goods": 0.11784582012347738,
+      "cum_pct_bads": 0.02853059103059103,
+      "cum_pct_goods": 0.11784582012347738,
+      "decile_ks": 8.93
+    },
+    {
+      "decile": 2,
+      "loan_count": 26966,
+      "bad_count": 2623,
+      "min_predicted_prob": 0.0836,
+      "max_predicted_prob": 0.1104,
+      "mean_predicted_prob": 0.0977,
+      "good_count": 24343,
+      "observed_bad_rate": 0.0973,
+      "calibration_ratio": 1.0041,
+      "pct_of_all_bads": 0.04868948618948619,
+      "pct_of_all_goods": 0.11283070990229342,
+      "cum_pct_bads": 0.07722007722007722,
+      "cum_pct_goods": 0.23067653002577082,
+      "decile_ks": 15.35
+    },
+    {
+      "decile": 3,
+      "loan_count": 26971,
+      "bad_count": 3322,
+      "min_predicted_prob": 0.1104,
+      "max_predicted_prob": 0.1326,
+      "mean_predicted_prob": 0.1217,
+      "good_count": 23649,
+      "observed_bad_rate": 0.1232,
+      "calibration_ratio": 0.9884,
+      "pct_of_all_bads": 0.06166468666468666,
+      "pct_of_all_goods": 0.10961399410423271,
+      "cum_pct_bads": 0.1388847638847639,
+      "cum_pct_goods": 0.34029052413000355,
+      "decile_ks": 20.14
+    },
+    {
+      "decile": 4,
+      "loan_count": 26950,
+      "bad_count": 3958,
+      "min_predicted_prob": 0.1327,
+      "max_predicted_prob": 0.1539,
+      "mean_predicted_prob": 0.1434,
+      "good_count": 22992,
+      "observed_bad_rate": 0.1469,
+      "calibration_ratio": 0.9764,
+      "pct_of_all_bads": 0.07347044847044847,
+      "pct_of_all_goods": 0.10656877468157294,
+      "cum_pct_bads": 0.21235521235521237,
+      "cum_pct_goods": 0.4468592988115765,
+      "decile_ks": 23.45
+    },
+    {
+      "decile": 5,
+      "loan_count": 26961,
+      "bad_count": 4527,
+      "min_predicted_prob": 0.1539,
+      "max_predicted_prob": 0.1766,
+      "mean_predicted_prob": 0.1652,
+      "good_count": 22434,
+      "observed_bad_rate": 0.1679,
+      "calibration_ratio": 0.9839,
+      "pct_of_all_bads": 0.08403252153252153,
+      "pct_of_all_goods": 0.10398242393903999,
+      "cum_pct_bads": 0.2963877338877339,
+      "cum_pct_goods": 0.5508417227506165,
+      "decile_ks": 25.45
+    },
+    {
+      "decile": 6,
+      "loan_count": 26969,
+      "bad_count": 5188,
+      "min_predicted_prob": 0.1766,
+      "max_predicted_prob": 0.2023,
+      "mean_predicted_prob": 0.1889,
+      "good_count": 21781,
+      "observed_bad_rate": 0.1924,
+      "calibration_ratio": 0.9822,
+      "pct_of_all_bads": 0.0963023463023463,
+      "pct_of_all_goods": 0.10095574466507222,
+      "cum_pct_bads": 0.39269008019008017,
+      "cum_pct_goods": 0.6517974674156887,
+      "decile_ks": 25.91
+    },
+    {
+      "decile": 7,
+      "loan_count": 26967,
+      "bad_count": 5824,
+      "min_predicted_prob": 0.2023,
+      "max_predicted_prob": 0.2346,
+      "mean_predicted_prob": 0.2177,
+      "good_count": 21143,
+      "observed_bad_rate": 0.216,
+      "calibration_ratio": 1.008,
+      "pct_of_all_bads": 0.10810810810810811,
+      "pct_of_all_goods": 0.09799859094869941,
+      "cum_pct_bads": 0.5007981882981882,
+      "cum_pct_goods": 0.7497960583643881,
+      "decile_ks": 24.9
+    },
+    {
+      "decile": 8,
+      "loan_count": 26956,
+      "bad_count": 6899,
+      "min_predicted_prob": 0.2346,
+      "max_predicted_prob": 0.2796,
+      "mean_predicted_prob": 0.2555,
+      "good_count": 20057,
+      "observed_bad_rate": 0.2559,
+      "calibration_ratio": 0.9984,
+      "pct_of_all_bads": 0.12806281556281557,
+      "pct_of_all_goods": 0.09296494057882344,
+      "cum_pct_bads": 0.6288610038610039,
+      "cum_pct_goods": 0.8427609989432115,
+      "decile_ks": 21.39
+    },
+    {
+      "decile": 9,
+      "loan_count": 26956,
+      "bad_count": 8320,
+      "min_predicted_prob": 0.2796,
+      "max_predicted_prob": 0.355,
+      "mean_predicted_prob": 0.3135,
+      "good_count": 18636,
+      "observed_bad_rate": 0.3087,
+      "calibration_ratio": 1.0158,
+      "pct_of_all_bads": 0.15444015444015444,
+      "pct_of_all_goods": 0.0863785527559931,
+      "cum_pct_bads": 0.7833011583011583,
+      "cum_pct_goods": 0.9291395516992047,
+      "decile_ks": 14.58
+    },
+    {
+      "decile": 10,
+      "loan_count": 26962,
+      "bad_count": 11674,
+      "min_predicted_prob": 0.355,
+      "max_predicted_prob": 0.688,
+      "mean_predicted_prob": 0.4326,
+      "good_count": 15288,
+      "observed_bad_rate": 0.433,
+      "calibration_ratio": 0.9992,
+      "pct_of_all_bads": 0.2166988416988417,
+      "pct_of_all_goods": 0.07086044830079537,
+      "cum_pct_bads": 1.0,
+      "cum_pct_goods": 1.0,
+      "decile_ks": 0.0
+    }
+  ],
+  "temporal_maturity_analysis": {
+    "earliest_issue_date": "2007-06-01",
+    "latest_issue_date": "2018-12-01",
+    "vintages": [
+      {
+        "issue_year": 2007,
+        "earliest_date": "2007-06-01",
+        "latest_date": "2007-12-01",
+        "total_originated": 603,
+        "closed_loans": 603,
+        "active_loans": 0,
+        "pct_closed": 100.0,
+        "default_count": 158,
+        "bad_rate_closed": 26.2
+      },
+      {
+        "issue_year": 2008,
+        "earliest_date": "2008-01-01",
+        "latest_date": "2008-12-01",
+        "total_originated": 2393,
+        "closed_loans": 2393,
+        "active_loans": 0,
+        "pct_closed": 100.0,
+        "default_count": 496,
+        "bad_rate_closed": 20.73
+      },
+      {
+        "issue_year": 2009,
+        "earliest_date": "2009-01-01",
+        "latest_date": "2009-12-01",
+        "total_originated": 5281,
+        "closed_loans": 5281,
+        "active_loans": 0,
+        "pct_closed": 100.0,
+        "default_count": 723,
+        "bad_rate_closed": 13.69
+      },
+      {
+        "issue_year": 2010,
+        "earliest_date": "2010-01-01",
+        "latest_date": "2010-12-01",
+        "total_originated": 12537,
+        "closed_loans": 12537,
+        "active_loans": 0,
+        "pct_closed": 100.0,
+        "default_count": 1757,
+        "bad_rate_closed": 14.01
+      },
+      {
+        "issue_year": 2011,
+        "earliest_date": "2011-01-01",
+        "latest_date": "2011-12-01",
+        "total_originated": 21721,
+        "closed_loans": 21721,
+        "active_loans": 0,
+        "pct_closed": 100.0,
+        "default_count": 3297,
+        "bad_rate_closed": 15.18
+      },
+      {
+        "issue_year": 2012,
+        "earliest_date": "2012-01-01",
+        "latest_date": "2012-12-01",
+        "total_originated": 53367,
+        "closed_loans": 53367,
+        "active_loans": 0,
+        "pct_closed": 100.0,
+        "default_count": 8644,
+        "bad_rate_closed": 16.2
+      },
+      {
+        "issue_year": 2013,
+        "earliest_date": "2013-01-01",
+        "latest_date": "2013-12-01",
+        "total_originated": 134814,
+        "closed_loans": 134804,
+        "active_loans": 10,
+        "pct_closed": 99.99,
+        "default_count": 21024,
+        "bad_rate_closed": 15.6
+      },
+      {
+        "issue_year": 2014,
+        "earliest_date": "2014-01-01",
+        "latest_date": "2014-12-01",
+        "total_originated": 235629,
+        "closed_loans": 223103,
+        "active_loans": 12526,
+        "pct_closed": 94.68,
+        "default_count": 41162,
+        "bad_rate_closed": 18.45
+      },
+      {
+        "issue_year": 2015,
+        "earliest_date": "2015-01-01",
+        "latest_date": "2015-12-01",
+        "total_originated": 421095,
+        "closed_loans": 375546,
+        "active_loans": 45549,
+        "pct_closed": 89.18,
+        "default_count": 75804,
+        "bad_rate_closed": 20.19
+      },
+      {
+        "issue_year": 2016,
+        "earliest_date": "2016-01-01",
+        "latest_date": "2016-12-01",
+        "total_originated": 434407,
+        "closed_loans": 293105,
+        "active_loans": 141302,
+        "pct_closed": 67.47,
+        "default_count": 68252,
+        "bad_rate_closed": 23.29
+      },
+      {
+        "issue_year": 2017,
+        "earliest_date": "2017-01-01",
+        "latest_date": "2017-12-01",
+        "total_originated": 443579,
+        "closed_loans": 169321,
+        "active_loans": 274258,
+        "pct_closed": 38.17,
+        "default_count": 39169,
+        "bad_rate_closed": 23.13
+      },
+      {
+        "issue_year": 2018,
+        "earliest_date": "2018-01-01",
+        "latest_date": "2018-12-01",
+        "total_originated": 495242,
+        "closed_loans": 56318,
+        "active_loans": 438924,
+        "pct_closed": 11.37,
+        "default_count": 8874,
+        "bad_rate_closed": 15.76
+      }
+    ],
+    "oot_recommendation": "Recommended Out-of-Time (OOT) holdout: 2016 vintage (293,105 closed loans, 67.5% closed, 23.29% bad rate). Development training window: 2012\u20132015 vintages (784,820 closed loans, >89% mature). Avoid 2017\u20132018 for primary model training due to extreme right-censoring (>61% and >88% unclosed active loans)."
+  },
+  "status": "BASELINE_SCORECARD_COMPLETE"
+}

@@ -1,0 +1,69 @@
+{
+  "task": "STEP 6 / TASK 5: POWER AUTOMATE MONTHLY BOARD REPORT + PDF AUTOMATION PIPELINE",
+  "task_status": "COMPLETE",
+  "audit_timestamp_utc": "2026-11-11T10:23:00Z",
+  "live_execution_status": "NOT EXECUTED LOCALLY — POWER AUTOMATE CLOUD ENVIRONMENT REQUIRED",
+  "deliverables": {
+    "pdf_report": {
+      "generated": true,
+      "relative_path": "power_automation/output/monthly_board_report.pdf",
+      "absolute_path": "D:/nexvia - 1/Financial-Analytics-System/power_automation/output/monthly_board_report.pdf",
+      "size_bytes": 68217,
+      "page_count": 2,
+      "format": "Vector PDF (matplotlib headless Agg backend)",
+      "kpis_included": [
+        { "name": "Total Funded Amount", "value": "$34,004,208,600.00", "source": "vw_portfolio_pnl_monthly" },
+        { "name": "Principal Received", "value": "$21,489,393,643.58", "source": "vw_portfolio_pnl_monthly" },
+        { "name": "Interest Income", "value": "$5,496,560,266.06", "source": "vw_portfolio_pnl_monthly" },
+        { "name": "Late Fee Income", "value": "$3,432,718.19", "source": "vw_portfolio_pnl_monthly" },
+        { "name": "Gross Recoveries", "value": "$325,262,956.86", "source": "vw_portfolio_pnl_monthly" },
+        { "name": "Collection Cost", "value": "$54,216,619.20", "source": "vw_portfolio_pnl_monthly" },
+        { "name": "Net Recoveries", "value": "$271,046,337.67", "source": "vw_portfolio_pnl_monthly" },
+        { "name": "Net Realized Credit Loss", "value": "$2,733,766,666.67", "source": "vw_portfolio_pnl_monthly" },
+        { "name": "Active Gross Balance", "value": "$9,510,001,923.03", "source": "vw_portfolio_balance_sheet_summary" },
+        { "name": "NPL Balance", "value": "$244,246,366.02", "source": "vw_portfolio_balance_sheet_summary" },
+        { "name": "NPL Ratio", "value": "2.5683%", "source": "vw_portfolio_balance_sheet_summary" },
+        { "name": "Loss Reserve (ACL/ECL)", "value": "$772,880,427.48", "source": "vw_portfolio_balance_sheet_summary" },
+        { "name": "Net Carrying Value", "value": "$8,737,121,495.55", "source": "vw_portfolio_balance_sheet_summary" },
+        { "name": "Scorecard In-Time AUC", "value": 0.6828, "source": "credit_risk_final_scorecard.json" },
+        { "name": "Scorecard 2016 OOT AUC", "value": 0.6770, "source": "credit_risk_final_scorecard.json" },
+        { "name": "Scorecard OOT KS", "value": "25.15%", "source": "credit_risk_final_scorecard.json" }
+      ]
+    },
+    "email_dispatcher": {
+      "path": "power_automation/email_dispatcher.py",
+      "dry_run_verified": true,
+      "default_mode": "dry_run=True",
+      "credential_masking_verified": true,
+      "missing_credential_safe_handling_verified": true,
+      "supported_connectors": ["SMTP", "Office 365 Exchange Relay"]
+    },
+    "power_automate_flow_spec": {
+      "path": "power_automation/power_automate_flow_spec.md",
+      "verified": true,
+      "flow_name": "NEXVIA-FIN-MONTHLY-BOARD-REPORT-PIPELINE",
+      "trigger": "Recurrence (Monthly 1st @ 06:00 UTC)",
+      "steps": [
+        "Run_Python_Report_Pipeline",
+        "Check_PDF_Generated",
+        "Create_SharePoint_Archive_File",
+        "Send_Executive_Board_Email_V2",
+        "Post_AdaptiveCard_To_Risk_Channel"
+      ],
+      "error_handling": "run-after hasFailed scope with P1 alerts and ServiceNow escalation",
+      "environment_status": "DESIGN/SPECIFICATION — LIVE CLOUD FLOW NOT EXECUTED IN THIS LOCAL ENVIRONMENT"
+    },
+    "test_suite": {
+      "test_file": "tests/test_power_automation.py",
+      "tests_total": 7,
+      "tests_passed": 7,
+      "tests_failed": 0
+    }
+  },
+  "governance_signoff": {
+    "data_integrity": "STRICT_READ_ONLY",
+    "unauthorized_modifications": 0,
+    "secret_exposure": 0
+  }
+}
+

@@ -1,0 +1,16 @@
+[
+  {
+    "footer_num": 1,
+    "chunk_row_index": 2260699,
+    "non_null_fields": {
+      "id": "Total amount funded in policy code 1: 1465324575"
+    }
+  },
+  {
+    "footer_num": 2,
+    "chunk_row_index": 2260700,
+    "non_null_fields": {
+      "id": "Total amount funded in policy code 2: 521953170"
+    }
+  }
+]

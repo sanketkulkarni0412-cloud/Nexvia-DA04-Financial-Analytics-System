@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "fact_accepted_loans_count": 51072,
+  "dim_borrower_credit_profile_count": 51072,
+  "expected_rows": 51072,
+  "row_count_variance": 0,
+  "db_sum_loan_amnt": 767112825.0,
+  "expected_sum_loan_amnt": 767112825.0,
+  "loan_amnt_variance": 0.0,
+  "db_sum_total_pymnt": 767235505.08,
+  "expected_sum_total_pymnt": 767235505.08,
+  "total_pymnt_variance": 0.0,
+  "db_sum_rec_int": 141638290.35,
+  "db_sum_rec_prncp": 613755125.4,
+  "duplicate_loan_ids": 0,
+  "orphan_date_foreign_keys": 0,
+  "orphan_grade_foreign_keys": 0,
+  "orphan_profile_foreign_keys": 0
+}
